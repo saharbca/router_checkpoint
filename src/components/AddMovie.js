@@ -5,6 +5,7 @@ const AddMovie = ({ handleAdd }) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [title, setTitle] = useState("");
+    const [id, setId] = useState("");
     const [description, setDescription] = useState("");
     const [posterURL, setPosterURL] = useState("");
     const [rating, setRating] = useState(1);
@@ -12,6 +13,7 @@ const AddMovie = ({ handleAdd }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const newMovie = {
+            id,
             title,
             description,
             posterURL,
@@ -32,6 +34,8 @@ const AddMovie = ({ handleAdd }) => {
                 </Modal.Header>
                 <Modal.Body>
                     <form onSubmit={handleSubmit}>
+                        ID:
+                        <input type="text" className="form-control" placeholder="enter id here" onChange={(e) => setId(e.target.value)} value={id} />
                         TITLE:
                         <input type="text" className="form-control" placeholder="enter title here" onChange={(e) => setTitle(e.target.value)} value={title} />
                         DESCRIPTION:

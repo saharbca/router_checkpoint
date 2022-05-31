@@ -3,7 +3,15 @@ import '../MovieCard.css';
 import { Card } from "react-bootstrap";
 import StarRatingComponent from 'react-star-rating-component';
 import '../MovieCard.css';
+import {Link,Routes,Route,useNavigate} from "react-router-dom";
+import Description from './Description'
+import { Button } from "react-bootstrap"
+
 const MovieCard = ({ movie }) => {
+    const nav=useNavigate();
+    const handleRoute=()=>{
+        nav();
+    };
     return (
         <div className="div">
             <div className="c">
@@ -12,7 +20,9 @@ const MovieCard = ({ movie }) => {
                     <Card.Body>
                     <Card.Title>{movie.title}</Card.Title>
                     <Card.Text>
-                        {movie.description}
+                        {movie.description.substring(0, 80)}
+                        <Link to={`/Description/${movie.id}`}> Learn more</Link>
+                        
                     </Card.Text>        
                     <Card.Text>
                         <StarRatingComponent 
