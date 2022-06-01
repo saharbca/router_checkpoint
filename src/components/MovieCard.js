@@ -4,8 +4,6 @@ import { Card } from "react-bootstrap";
 import StarRatingComponent from 'react-star-rating-component';
 import '../MovieCard.css';
 import {Link,Routes,Route,useNavigate} from "react-router-dom";
-import Description from './Description'
-import { Button } from "react-bootstrap"
 
 const MovieCard = ({ movie }) => {
     const nav=useNavigate();

@@ -8,7 +8,6 @@ import AddMovie from "./components/AddMovie"
 import {Link,Routes,Route} from "react-router-dom";
 import Nav from "./components/Nav"
 import Description from "./components/Description"
-import Trailer from "./components/Trailer"
 function App() {
 const [rate, setRate] = useState(1)
 const [name, setName] = useState('');
